@@ -2,11 +2,6 @@
 
  /**
   * @author James Condon
-	* @reviewed by Brenden Horlick
-  * This is an application that allows the user to draw a line on the
-	* using a swipe from the starting to the endX
-	* only draws if the length is more than a certain amount
-	* or time is less
 	*/
 
 
@@ -16,12 +11,12 @@ var gameNs = {};
 
 function main()
 {
-	var time1 = null;
 	initCanvas();
-	document.addEventListener("touchstart", onTouchStart.bind(null, time1), false);
-  document.addEventListener("touchmove", onTouchMove, false);
-	document.addEventListener("touchend", onTouchEnd, false);
-	console.log(is_touch_device());
+
+	var game = new Game()
+	gameNs.game = game;
+	game.initWorld()
+	game.update()
 
 }
 
